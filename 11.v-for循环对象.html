@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie-edge'>
+    <title>Document</title>
+    <script src='./lib/vue-2.4.0.js'></script>
+</head>
+
+<body>
+    <div id='app'>
+        <p>{{msg}}</p>
+        <p v-for="(value,key,i) in user">索引:----{{value}}-{{key}}--{{i}}</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '这是Vue模板',
+                user:{
+                    id:12,
+                    name:'lllllssss',
+                    gender:'男'
+                }
+
+            }
+        })
+    </script>
+</body>
+
+</html>

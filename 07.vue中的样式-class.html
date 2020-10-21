@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie-edge'>
+    <title>Document</title>
+    <script src='./lib/vue-2.4.0.js'></script>
+
+    <style>
+        .red{
+            color: red;
+        }
+        .thin{
+            font-weight: 200;
+        }
+        .italic{
+            font-style: italic;
+        }
+        .actice{
+            letter-spacing: 0.5rem;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <div id='app'>
+        <!-- 第一种形式 -->
+        <p class="red thin italic">这是一个很大的H1  洒洒水</p>
+        <!-- 第二种 -->
+        <p :class="['red','italic']">将样式放到数组中加载</p>
+        <!-- 第三种 -->
+        <h5 :class="['thin','italic',flag?'actice':'']">在数组中使用三元表达式</h5>
+        <!-- 第四种 -->
+        <h1 :class="classArray">数组数组数组</h1>
+
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                flag:false,
+                msg: '这是Vue模板',
+                classArray:{red:true,thin:false,italic:true,actice:true}
+            }
+        })
+    </script>
+</body>
+
+</html>
